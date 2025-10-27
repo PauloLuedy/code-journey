@@ -1,67 +1,67 @@
 # Conventional Commits
 
-Guia para padronização de mensagens de commit seguindo a especificação Conventional Commits.
+Guide for standardizing commit messages following the Conventional Commits specification.
 
-## Formato
+## Format
 
 ```
-<tipo>[escopo opcional]: <descrição>
+<type>[optional scope]: <description>
 
-[corpo opcional]
+[optional body]
 
-[rodapé(s) opcional(is)]
+[optional footer(s)]
 ```
 
-## Tipos
+## Types
 
-- **feat**: nova funcionalidade
-- **fix**: correção de bug
-- **docs**: mudanças na documentação
-- **style**: formatação, ponto e vírgula, etc (sem mudança de código)
-- **refactor**: refatoração de código
-- **test**: adição ou correção de testes
-- **chore**: tarefas de build, configurações, etc
+- **feat**: new feature
+- **fix**: bug fix
+- **docs**: documentation changes
+- **style**: formatting, semicolons, etc (no code change)
+- **refactor**: code refactoring
+- **test**: adding or fixing tests
+- **chore**: build tasks, configurations, etc
 
-## Exemplos
+## Examples
 
-### Commit simples
+### Simple commit
 ```
-feat: adicionar validação de email
-```
-
-### Com escopo
-```
-feat(auth): implementar login com Google
+feat: add email validation
 ```
 
-### Com corpo e rodapé
+### With scope
 ```
-fix: corrigir erro de validação no formulário
+feat(auth): implement Google login
+```
 
-O campo de email não estava validando corretamente
-endereços com subdomínios.
+### With body and footer
+```
+fix: fix form validation error
+
+The email field was not correctly validating
+addresses with subdomains.
 
 Closes #123
 ```
 
 ### Breaking change
 ```
-feat!: alterar estrutura da API de usuários
+feat!: change user API structure
 
-BREAKING CHANGE: o endpoint /users agora retorna
-um objeto com propriedades diferentes
+BREAKING CHANGE: the /users endpoint now returns
+an object with different properties
 ```
 
-## Benefícios
+## Benefits
 
-- Histórico de commits mais limpo e organizado
-- Geração automática de changelogs
-- Facilita identificação de breaking changes
-- Melhora comunicação entre desenvolvedores
-- Integração com ferramentas de versionamento semântico
+- Cleaner and organized commit history
+- Automatic changelog generation
+- Easier identification of breaking changes
+- Improved communication between developers
+- Integration with semantic versioning tools
 
-## Ferramentas
+## Tools
 
-- **commitizen**: CLI para criar commits padronizados
-- **commitlint**: validação de mensagens de commit
-- **standard-version**: geração automática de changelog
+- **commitizen**: CLI for creating standardized commits
+- **commitlint**: commit message validation
+- **standard-version**: automatic changelog generation
