@@ -1,13 +1,12 @@
-const bookPrices = [12, 8, 15, 22, 5];
-
-
-let cheapestBook = 0;
-
-for (let current = 0; current < bookPrices.length; current++) {
-   console.log(bookPrices[current]);
-   if(bookPrices[current] < bookPrices[cheapestBook]) {
-       cheapestBook = current;
-   }
+function menorValor(arrProdutos, posicaoInicial) {
+  let maisBarato = posicaoInicial;
+  
+  for (let atual = posicaoInicial; atual < arrProdutos.length; atual++) {
+    if (arrProdutos[atual].preco < arrProdutos[maisBarato].preco) {
+      maisBarato = atual
+    }
+  }
+  return maisBarato;
 }
 
-console.log("Cheapest book price: " + bookPrices[cheapestBook]);
+module.exports = menorValor;
