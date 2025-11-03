@@ -3,20 +3,30 @@
 
 -- Exercise 1: INNER JOIN
 -- Join employees and departments tables to show employee names with their department names
--- Solution: SELECT e.name, d.department_name FROM employees e INNER JOIN departments d ON e.department_id = d.id;
+Solution: SELECT e.name, d.department_name FROM employees e INNER JOIN departments d ON e.department_id = d.id;
 
 -- Exercise 2: GROUP BY with COUNT
 -- Count employees by department
--- Solution: SELECT department, COUNT(*) as employee_count FROM employees GROUP BY department;
+ SELECT department, COUNT(*) as employee_count FROM employees GROUP BY department;
 
 -- Exercise 3: GROUP BY with HAVING
--- Find departments with more than 5 employees
--- Solution: SELECT department, COUNT(*) FROM employees GROUP BY department HAVING COUNT(*) > 5;
+-- Find departments with more than 1 employees
+select 
+d.department_name AS departamento,
+COUNT(e.id) as total_funcionarios
+from departments d 
+left join employees e 
+on e.department_id = d.id
+group by d.department_name 
+HAVING count(e.id) > 1
+
 
 -- Exercise 4: LEFT JOIN
 -- Show all departments and their employees (including departments with no employees)
--- Solution: SELECT d.department_name, e.name FROM departments d LEFT JOIN employees e ON d.id = e.department_id;
-
+SELECT d.department_name, e.name
+FROM departments d 
+LEFT JOIN employees e
+on e.department_id  = d.id\
 -- Exercise 5: Subquery in WHERE
 -- Find employees earning more than the average salary
 -- Solution: SELECT * FROM employees WHERE salary > (SELECT AVG(salary) FROM employees);
