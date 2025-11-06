@@ -26,10 +26,13 @@ HAVING count(e.id) > 1
 SELECT d.department_name, e.name
 FROM departments d 
 LEFT JOIN employees e
-on e.department_id  = d.id\
+on e.department_id  = d.id
 -- Exercise 5: Subquery in WHERE
 -- Find employees earning more than the average salary
--- Solution: SELECT * FROM employees WHERE salary > (SELECT AVG(salary) FROM employees);
+select *
+from employees e 
+where salary > 
+(select AVG(salary) from employees e )
 
 -- Exercise 6: Multiple JOINs
 -- Join employees, departments, and projects tables to show employee name, department, and project
